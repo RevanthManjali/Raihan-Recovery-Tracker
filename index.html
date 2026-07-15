@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raihan Recovery Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🏥 Raihan Recovery Tracker</h1>
+
+<p>30-Day Bone Recovery Companion</p>
+
+</header>
+
+<section class="dashboard">
+
+<div class="card">
+
+<h2>🦴 Surgery Details</h2>
+
+<label>Surgery Name</label>
+
+<input
+type="text"
+id="surgeryName"
+placeholder="Example: Humerus ORIF Surgery">
+
+<label>Surgery Date</label>
+
+<input
+type="date"
+id="surgeryDate">
+
+</div>
+
+<div class="card">
+
+<h2>📊 Recovery Progress</h2>
+
+<h3 id="todayDate"></h3>
+
+<h1 id="recoveryDay">
+Day 1
+</h1>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<h2 id="score">
+Recovery Score
+0%
+</h2>
+
+</div>
+
+</section>
+<!-- Doctor Instructions -->
+
+<section class="section">
+
+<h2>👨‍⚕️ Doctor Instructions</h2>
+
+<div class="card">
+
+<textarea
+id="doctorInstructions"
+rows="6"
+placeholder="Example:
+
+• Wear sling at all times
+
+• No lifting for 6 weeks
+
+• Keep dressing dry
+
+• Finger exercises every hour
+
+• Follow-up appointment on 25 July
+
+• Contact hospital immediately if fever, pus, redness or severe swelling develops.">
+</textarea>
+
+</div>
+
+</section>
+
+<!-- Medicine Manager -->
+
+<section class="section">
+
+<h2>💊 Medicine Tracker</h2>
+
+<div class="card">
+
+<label>Medicine Name</label>
+
+<input
+type="text"
+id="medicineName"
+placeholder="Example: Paracetamol">
+
+<label>Dosage</label>
+
+<input
+type="text"
+id="medicineDose"
+placeholder="500 mg">
+
+<label>Time</label>
+
+<input
+type="time"
+id="medicineTime">
+
+<label>Food Timing</label>
+
+<select id="foodTiming">
+
+<option>After Food</option>
+
+<option>Before Food</option>
+
+<option>With Food</option>
+
+<option>Any Time</option>
+
+</select>
+
+<button id="addMedicine">
+
+➕ Add Medicine
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Today's Medicines</h3>
+
+<div id="medicineList">
+
+<p>No medicines added.</p>
+
+</div>
+
+</div>
+
+</section>
+  <!-- ========================= -->
+<!-- Recovery Diet Tracker -->
+<!-- ========================= -->
+
+<section class="section">
+
+<h2>🍽 Recovery Diet Tracker</h2>
+
+<!-- Morning -->
+
+<div class="card">
+
+<h3>🌅 Morning</h3>
+
+<label><input type="checkbox" class="diet"> 🥛 Milk <small>- Calcium, Protein & Phosphorus</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🥚 1 Whole Egg + 2 Egg Whites <small>- Protein, Healthy Fat & Vitamin D</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🌾 Ragi Sangati <small>- Calcium & Iron</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🍽 Idli with Sambar <small>- Energy, Protein & Vitamins</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🍊 Vitamin C Fruit (Guava / Orange / Sweet Lime / Papaya)</label>
+
+</div>
+
+<!-- Lunch -->
+
+<div class="card">
+
+<h3>🍛 Lunch</h3>
+
+<label><input type="checkbox" class="diet"> 🍚 Rice <small>- Energy</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🥣 Dal <small>- Plant Protein</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🍗 Chicken <small>- Muscle & Bone Repair</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🥬 Spinach <small>- Calcium, Iron & Vitamin K</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🌿 Thotakura <small>- Calcium, Iron & Vitamin K</small></label><br>
+
+<label><input type="checkbox" class="diet"> 🥗 Salad (Carrot, Cucumber & Tomato)</label><br>
+
+<label><input type="checkbox" class="diet"> 🥣 Curd <small>- Calcium & Probiotics</small></label>
+
+</div>
+
+<!-- Snack -->
+
+<div class="card">
+
+<h3>☕ Evening Snack</h3>
+
+<label><input type="checkbox" class="diet"> 🌱 Sprouts</label><br>
+
+<label><input type="checkbox" class="diet"> 🌽 Boiled Corn</label><br>
+
+<label><input type="checkbox" class="diet"> 🥜 Peanut Chikki</label>
+
+</div>
+
+<!-- Dinner -->
+
+<div class="card">
+
+<h3>🌙 Dinner</h3>
+
+<label><input type="checkbox" class="diet"> 🌾 2 Chapati or Basmati Rice</label><br>
+
+<label><input type="checkbox" class="diet"> 🥘 Mixed Vegetable Curry</label><br>
+
+<label><input type="checkbox" class="diet"> 🍗 Chicken</label><br>
+
+<label><input type="checkbox" class="diet"> 🧀 Paneer</label>
+
+<p style="margin-top:10px;color:green;">
+🌙 Protein and calcium at dinner support overnight tissue and bone repair.
+</p>
+
+</div>
+
+</section>
+  <!-- ====================================== -->
+<!-- Water Tracker -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<h2>💧 Water Intake</h2>
+
+<div class="card">
+
+<p>Daily Goal: <strong>8 Glasses (2.5–3 Litres)</strong></p>
+
+<label><input type="checkbox" class="water"> Glass 1</label><br>
+
+<label><input type="checkbox" class="water"> Glass 2</label><br>
+
+<label><input type="checkbox" class="water"> Glass 3</label><br>
+
+<label><input type="checkbox" class="water"> Glass 4</label><br>
+
+<label><input type="checkbox" class="water"> Glass 5</label><br>
+
+<label><input type="checkbox" class="water"> Glass 6</label><br>
+
+<label><input type="checkbox" class="water"> Glass 7</label><br>
+
+<label><input type="checkbox" class="water"> Glass 8</label>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Pain Tracker -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<h2>😊 Pain Tracker</h2>
+
+<div class="card">
+
+<label>Current Pain Level (0 = No Pain, 10 = Worst Pain)</label>
+
+<input
+type="range"
+id="painLevel"
+min="0"
+max="10"
+value="0">
+
+<p>
+
+Pain Score:
+<strong id="painValue">0</strong>/10
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Physiotherapy -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<h2>🚶 Physiotherapy</h2>
+
+<div class="card">
+
+<label><input type="checkbox" class="exercise"> Finger Exercises</label><br>
+
+<label><input type="checkbox" class="exercise"> Wrist Exercises</label><br>
+
+<label><input type="checkbox" class="exercise"> Shoulder Exercises</label><br>
+
+<label><input type="checkbox" class="exercise"> Walking</label>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Sleep -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<h2>😴 Sleep Tracker</h2>
+
+<div class="card">
+
+<label>Hours Slept</label>
+
+<input
+type="number"
+id="sleepHours"
+min="0"
+max="24"
+placeholder="Example: 8">
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Daily Notes -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<h2>📝 Daily Notes</h2>
+
+<div class="card">
+
+<textarea
+id="dailyNotes"
+rows="6"
+placeholder="Write today's recovery notes here..."></textarea>
+
+</div>
+
+</section>
+  <!-- ====================================== -->
+<!-- Recovery Score -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>📊 Daily Recovery Score</h2>
+
+<h1 id="recoveryScore">0%</h1>
+
+<div class="progress">
+
+<div id="dailyProgress"></div>
+
+</div>
+
+<p>
+
+Recovery score is automatically calculated from:
+
+</p>
+
+<ul>
+
+<li>💊 Medicine Completed</li>
+
+<li>🍽 Diet Completed</li>
+
+<li>💧 Water Intake</li>
+
+<li>🚶 Physiotherapy</li>
+
+<li>😴 Sleep</li>
+
+<li>😊 Pain Entry</li>
+
+<li>📝 Daily Notes</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- 30 Day Recovery Calendar -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>📅 30-Day Recovery Calendar</h2>
+
+<div id="calendar">
+
+<p>Day 1</p>
+
+<p>Day 2</p>
+
+<p>Day 3</p>
+
+<p>Day 4</p>
+
+<p>Day 5</p>
+
+<p>Day 6</p>
+
+<p>Day 7</p>
+
+<p>Day 8</p>
+
+<p>Day 9</p>
+
+<p>Day 10</p>
+
+<p>Day 11</p>
+
+<p>Day 12</p>
+
+<p>Day 13</p>
+
+<p>Day 14</p>
+
+<p>Day 15</p>
+
+<p>Day 16</p>
+
+<p>Day 17</p>
+
+<p>Day 18</p>
+
+<p>Day 19</p>
+
+<p>Day 20</p>
+
+<p>Day 21</p>
+
+<p>Day 22</p>
+
+<p>Day 23</p>
+
+<p>Day 24</p>
+
+<p>Day 25</p>
+
+<p>Day 26</p>
+
+<p>Day 27</p>
+
+<p>Day 28</p>
+
+<p>Day 29</p>
+
+<p>Day 30</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- PDF Report -->
+<!-- ====================================== -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>📄 Daily Recovery Report</h2>
+
+<p>
+
+Generate today's recovery summary as a PDF to share with your doctor or keep for your records.
+
+</p>
+
+<button id="downloadPDF">
+
+📄 Download Today's PDF Report
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- Footer -->
+<!-- ====================================== -->
+
+<footer>
+
+<p>
+
+🏥 Raihan Recovery Tracker
+
+</p>
+
+<p>
+
+Eat Healthy • Recover Faster • Stay Positive
+
+</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+
+</html>
